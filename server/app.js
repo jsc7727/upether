@@ -6,11 +6,19 @@ const logger = require('morgan');
 const ordersRouter = require('./routes/orders');
 const usersRouter = require('./routes/users');
 const favoritesRouter = require('./routes/favorites');
+const cors = require('cors');
 const app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(
+  cors({
+    origin: ["https://localhost:3000"],
+    credentials: true,
+    methods: ["GET", "POST", "OPTIONS"],
+  })
+);
 app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, 'public')));
 
