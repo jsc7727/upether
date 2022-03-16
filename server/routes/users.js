@@ -3,19 +3,19 @@ const router = express.Router();
 const controllers = require('../controllers');
 
 // cookies
-/** 
- * components:
- *   securitySchemes:
- *     bearerAuth:         
- *       type: http
- *       scheme: bearer
- *       bearerFormat: JWT
-*/
+/**
+
+ */
 
 // schemas
 /**
  * @swagger
  *  components:
+ *      securitySchemes:
+ *          bearerAuth:         
+ *              type: http
+ *              scheme: bearer
+ *              bearerFormat: JWT
  *      schemas:
  *          loginUserObject:
  *              type: object
@@ -165,7 +165,7 @@ router.get('/logout', controllers.users.logout);
  * /users/myInfo:
  *   post:
  *     security:
- *      - bearerAuth: [eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVwZXRoZXJAZ21haWwuY29tIiwiY3JlYXRlZEF0IjoiMjAyMi0wMy0xNlQwOTozNzoyNC4wMDBaIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0xNlQwOTozNzoyNC4wMDBaIiwiaWF0IjoxNjQ3NDI0MzE4LCJleHAiOjE2NDc0Mjc5MTh9.sZi2lxiKQD2wxqueHRltsmQA8pts3oiXsUMta-5FQhE]  
+ *      - bearerAuth: []
  *     summary: 내 정보
  *     tags: 
  *       - users
