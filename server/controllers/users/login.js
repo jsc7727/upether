@@ -6,8 +6,9 @@ require('dotenv').config();
 module.exports = async (req, res) => {
     const language = 'ko';
     const { body: { email, password } = {} } = req;
+    console.log(req.body, req.query, req.params)
     if (!(password && email)) {
-        return res.json({ message: FAIL_MESSAGE });
+        return res.status(400).json({ message: msg[language].FAIL_MESSAGE });
     }
     else {
         const userInfo = await users.findOne({

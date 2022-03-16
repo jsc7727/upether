@@ -4,8 +4,8 @@ module.exports.en = {
     INVALID_ACCESS_TOKEN: 'invalid access token',
     REFRESH_TOKEN_NOT_PROVIDED: 'refresh token not provided',
     INVALID_REFRESH_TOKEN: 'invalid refresh token, please log in again',
-    ACCESS_TOKEN_HAS_BENN_TEMPERED: 'access token has been tempered',
-    REFRESH_TOKEN_HAS_BENN_TEMPERED: 'refresh token has been tempered',
+    ACCESS_TOKEN_HAS_BEEN_TEMPERED: 'access token has been tempered',
+    REFRESH_TOKEN_HAS_BEEN_TEMPERED: 'refresh token has been tempered',
     REGISTER_SUCCESS: "register success",
     INSUFFICIENT_PARAMETERS: "insufficient parameters supplied",
     LOGOUT_SUCCESS: "Logged out successfully",
@@ -15,6 +15,10 @@ module.exports.en = {
 }
 
 module.exports.ko = {
+    ACCESS_TOKEN_HAS_BEEN_TEMPERED: "엑세스 토큰이 만료되었습니다.",
+    REFRESH_TOKEN_HAS_BEEN_TEMPERED: "리프레시 토큰이 만료되었습니다.",
+    INVALID_ACCESS_TOKEN: "잘못된 액세스 토큰",
+    FAIL_MESSAGE: "실패 메시지",
     SUCCESS_MESSAGE: "성공",
     REGISTER_SUCCESS: "회원가입 성공",
     EMAIL_EXISTS: "중복된 이메일 입니다.",

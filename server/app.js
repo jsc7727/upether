@@ -7,14 +7,54 @@ const ordersRouter = require('./routes/orders');
 const usersRouter = require('./routes/users');
 const favoritesRouter = require('./routes/favorites');
 const cors = require('cors');
+
+const swaggerJsdoc = require("swagger-jsdoc");
+const swaggerUi = require("swagger-ui-express");
 const app = express();
+require('dotenv').config();
+
+const options = {
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "upEther API with Swagger",
+      version: "0.1.0",
+      description:
+        "upEther API document with Swagger",
+      license: {
+        name: "MIT",
+        url: "https://spdx.org/licenses/MIT.html",
+      },
+      contact: {
+        name: "upEth",
+        url: "http://localhost:5000",
+        email: "gbs04087@gmail.com",
+      },
+    },
+    servers: [
+      {
+        url: `http://localhost:${process.env.PORT}`,
+      },
+    ],
+  },
+  apis: ["./routes/users.js"],
+};
+const specs = swaggerJsdoc(options);
+app.use(
+  "/api-docs",
+  swaggerUi.serve,
+  swaggerUi.setup(specs)
+);
+
+
+
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(
   cors({
-    origin: ["https://localhost:3000"],
+    origin: ["*"],
     credentials: true,
     methods: ["GET", "POST", "OPTIONS"],
   })
